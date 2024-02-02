@@ -15,7 +15,7 @@ def unpack(filename: str)->str:
     print("Extracting data from {}".format(filename))
     return filename
 
-@PipelineDecorator.component(return_values=["parsed", "filename", "category"], cache=True, task_type=TaskTypes.data_processing, repo="https://github.com/FeU-aKlos/minimal-clearml-sample.git", repo_branch="pipeline", packages=["numpy", "torch", "clearml"])
+@PipelineDecorator.component(return_values=["parsed", "filename", "category"], cache=True, task_type=TaskTypes.data_processing, repo="https://github.com/FeU-aKlos/minimal-clearml-sample.git", repo_branch="main", packages=["numpy", "torch", "clearml"])
 def extract(url:str, filename:str)->np.ndarray:
     """
     Transform the data from ubyte format to tensor format.
@@ -33,7 +33,7 @@ def extract(url:str, filename:str)->np.ndarray:
     
     return np.random.rand(10, 10), filename, "images"
 
-@PipelineDecorator.pipeline(name="custom pipeline logic v2", project="mnist-pipeline-project", version="0.0.1", repo="https://github.com/FeU-aKlos/minimal-clearml-sample.git", repo_branch="pipeline")
+@PipelineDecorator.pipeline(name="custom pipeline logic v2", project="mnist-pipeline-project", version="0.0.1", repo="https://github.com/FeU-aKlos/minimal-clearml-sample.git", repo_branch="main")
 def create_workflow(train_images_url, train_labels_url,test_images_url, test_labels_url):
     urls = [test_labels_url]
     fns = ["test-labels-ubyte.gz"]
