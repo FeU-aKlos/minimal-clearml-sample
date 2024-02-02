@@ -146,7 +146,7 @@ def test_model(dataset_id:str):
     accuracy = 100
     return accuracy
 
-@PipelineDecorator.pipeline(name="custom pipeline logic", project="mnist-pipeline-project", version="0.0.1", repo="https://github.com/FeU-aKlos/minimal-clearml-sample.git", repo_branch="pipeline")
+@PipelineDecorator.pipeline(name="custom pipeline logic v2", project="mnist-pipeline-project", version="0.0.1", repo="https://github.com/FeU-aKlos/minimal-clearml-sample.git", repo_branch="pipeline")
 def create_workflow(train_images_url, train_labels_url,test_images_url, test_labels_url):
     
     # urls = [train_images_url, train_labels_url,test_images_url, test_labels_url]
