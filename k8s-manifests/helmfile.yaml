@@ -1,0 +1,28 @@
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+  - name: clearml
+    url: https://allegroai.github.io/clearml-helm-charts
+helmDefaults:
+  createNamespace: true
+
+releases:
+  - name: minio
+    namespace: minio
+    chart: bitnami/minio
+    version: "13.3.1"
+    values:
+      - ./minio_values.yaml
+  - name: clearml
+    namespace: clearml
+    chart: clearml/clarml
+    version: "7.6.0"
+    values:
+      - ./clearml_values.yaml
+  - name: clearml-agent
+    namespace: clearml
+    chart: clearml/clearml-agent
+    version: "5.1.2"
+    values:
+      - ./clearml_agent_values.yaml
+
