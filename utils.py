@@ -10,3 +10,6 @@ def normalize(x, axis):
 
 def get_int(b):  # CONVERTS 4 BYTES TO A INT
     return int(codecs.encode(b, "hex"), 16)
+
+def some_function(text:str)->str:
+    return text
